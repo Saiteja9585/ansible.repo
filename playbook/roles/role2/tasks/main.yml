@@ -1,0 +1,11 @@
+- name: installing apache
+  command: yum install httpd -y
+- name: starting apache
+  command: systemctl start httpd
+
+- name: taking source code from GIT
+  git:
+    repo: 'https://github.com/Saiteja9585/ansible.repo.git'
+    dest: "/var/www/html/"
+
+

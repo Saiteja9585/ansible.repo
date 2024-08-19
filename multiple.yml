@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  vars:
+    ansible_become_password: "hp"
+  tasks:
+    - name: install jenkins
+      command: yum install tree -y
+      when: ansible_os_family== "RedHat"
+
+    - name: install jenkins
+      command: apt install jenkins -y
+      when: ansible_os_family== "Debian"
+

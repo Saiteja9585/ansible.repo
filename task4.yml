@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: checking for /etc/passwd file 
+      stat:
+        path: /etc/passwd
+      register: file
+
+    - name: creating /etc/passwd file if not present 
+      file:
+        path: /etc/passwd
+        state: touch
+      when: not file.stat.exists
+

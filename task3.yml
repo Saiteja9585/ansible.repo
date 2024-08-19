@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: installing git
+      command: yum install git -y
+
+    - name: checking if git is installed or not
+      command: "yum list installed git"
+      register: check_git 
+      
+    - name: install git package if not installed
+      command: yum install git -y
+      when: check_git != 0
+
+    - name: installing tree
+      command: yum install tree -y
+
+    - name: checking if tree is installed or not 
+      command: "yum list installed tree"
+      register: check_package
+      ignore_errors: yes
+
+    - name: install tree if not installed 
+      yum:
+        name: tree
+        state: latest
+        when: check_package !=  0
+

@@ -1,0 +1,15 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  tasks:
+    - name: checking wether /ansible/home/check.file is available or not
+      stat:
+        path: /home/ansible/check.file
+      register: check_file
+
+    - name: creating file in /ansible/homecheck.file since it was not available
+      file:
+        path: /home/ansible/check.file
+        state: touch
+      when: not check_file.stat.exists    

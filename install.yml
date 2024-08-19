@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: installing maven
+      yum:
+        name: maven
+        state: latest
+        when: ansible_os_family == "RedHat"
+

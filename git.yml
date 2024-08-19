@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  become: yes
+  become_method: sudo
+  vars:
+    ansible_become_password: "hp"
+  tasks:
+    - name: uninstall tree
+      command: sudo yum remove tree -y
+  handlers:
+        - name: restart sshd
+          command: systemctl restart sshd
+...
+
+
+

@@ -1,0 +1,11 @@
+---
+- name: creating directory
+  command: mkdir -p /home/ansible/role5
+- name: creating file
+  command: touch /home/ansible/role5/sharedfile
+
+- name: writing content and sharing to all the servers
+  copy: 
+  content: |
+    This is the content i am writing and sharing across the servers
+  dest: /home/ansible/sharedfile

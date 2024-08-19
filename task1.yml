@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: to check if all the servers are able to ping 
+      ping: 
