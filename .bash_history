@@ -209,3 +209,16 @@ vi task3.yml
 vi install.yml
 ansible-playbook install.yml 
 vi task3.yml
+clear
+ll
+vi task4.yml
+ansible-playbook task4.yml 
+vi task4.yml
+ansible-playbook task4.yml 
+vi task5.yml
+ansible-playbook task5.yml 
+pwd
+vi task5.yml
+ansible-playbook task5.yml 
+clear
+sudo -i
