@@ -8,6 +8,7 @@
         path: /etc/passwd
       register: file
 
+
     - name: creating /etc/passwd file if not present 
       file:
         path: /etc/passwd

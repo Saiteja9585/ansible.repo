@@ -9,7 +9,8 @@
     - name: checking if git is installed or not
       command: "yum list installed git"
       register: check_git 
-      
+
+
     - name: install git package if not installed
       command: yum install git -y
       when: check_git != 0

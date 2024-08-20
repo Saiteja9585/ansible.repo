@@ -8,6 +8,7 @@
         path: /home/ansible/check.file
       register: check_file
 
+
     - name: creating file in /ansible/homecheck.file since it was not available
       file:
         path: /home/ansible/check.file

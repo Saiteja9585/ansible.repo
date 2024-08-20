@@ -8,6 +8,7 @@
       register: ssh_status
       ignore_errors: yes
 
+
     - name: restart service if it is not running 
       command: systemctl restart sshd
       when: ssh_status.stdout == "inactive"
