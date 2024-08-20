@@ -1,7 +1,0 @@
-- name: installing java
-  command: yum install java-11-openjdk-devel -y
-  tags:
-    - a
-- name: installing tree
-  command: yum install tree -y
-  tags: b

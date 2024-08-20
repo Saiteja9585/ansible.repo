@@ -1,4 +1,0 @@
-- name: installing docker
-  command: yum install docker -y
-- name: restarting docker service
-  command: systemctl restart docker
